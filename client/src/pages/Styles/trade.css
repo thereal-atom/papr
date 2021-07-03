@@ -1,0 +1,186 @@
+.trending{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr;
+    width: 90%;
+}
+.box{
+    margin-top: 6vh;
+    margin-right: 1rem;
+    margin-left: 1rem;
+    background-color: #4f4370;
+    min-height: 140px;
+    border-radius: 5px;
+    transition: all 0.3s;
+    box-shadow: 1px 1px 1px 1px #11111155;
+}
+.box:hover{
+    cursor: pointer;
+    transition: all 0.3s;
+    transform: scale(1.02);
+    box-shadow: 4px 4px 4px 4px #11111166   ;
+}
+.markets{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 90%;
+}
+
+.content{
+    padding-top: 0.5rem;
+    padding-left: 0.8rem;
+}
+.content .pair{
+    font-size: 1.6rem;
+}
+.content .price {
+    display: flex;
+}
+.content .price{
+    color: #2eff63;
+    font-size: 1.4rem;
+}
+.content.minus .price{
+    color: #ff2e63;
+    font-size: 1.4rem;
+}
+.content .price .dollars{
+    color: rgb(170, 170, 170);
+    padding-top: 0.4rem;
+    padding-left: 0.3rem;
+    font-size: 1rem;
+    vertical-align: bottom;
+}
+.change{
+    display: flex;
+    color: #2eff63;
+}
+.content.minus .change{
+    color: #ff2e63;
+}
+.change .amount{
+    color: white;
+    padding-left: 1.3rem;
+}
+.table{
+    background: #4d4370;
+    margin-top: 3rem;
+    width: 95%;
+    padding-bottom: 10rem;
+    margin-bottom: 10rem;
+    border-radius: 5px;
+    box-shadow: 1px 1px 1px 1px #11111155;
+    display: flex;
+}
+.table table{
+    padding-top: 0.7rem;
+    width: 100%;
+}
+.table thead tr{
+    color: rgb(189, 255, 241);
+    font-weight: bold;
+    font-size: 1.4rem;
+}
+.table td{
+    padding-top: 1.3rem;
+    padding-left: 1.9rem;
+    padding-right: 1.9rem;
+}
+.table .trade button{
+    color: white;
+    border: none;
+    padding: 0.2rem 3rem;
+    font-size: 1.2rem;
+    background-color: #2d2a5a;
+    border-radius: 16px;
+    transition: all 0.3s;   
+}
+.table .trade a{
+    text-decoration: none;
+    color: white;
+}
+.table .trade button:hover{
+    cursor: pointer;
+    transform: scale(1.02);
+    background-color: #373370;
+    transition: all 0.3s;
+}
+.table tbody tr{
+    text-align: center;
+    font-size: 1.2rem;
+}
+.table tbody tr:hover{
+    cursor: pointer;
+}
+
+.neg{
+    color: #ff2e63;
+}
+.pos{
+    color: #2eff63;
+}
+.h_label{
+    color: #eee;
+    padding-right: 0.4rem;
+}
+.content .price{
+    display: inline-block;
+    min-width: 105px;
+}
+.content .dollars{
+    display: inline-block;
+}
+.content .change{
+    padding-top: 1rem;
+}
+.table .trade{
+}
+.table tbody .trade{
+    flex: 1;
+    padding-left: 2rem;
+}
+.container{
+    background: #252336;
+}
+@media screen and (max-width: 1440px){
+    .table td{
+        padding-top: 0.9rem;
+        padding-left: 0.4rem;
+        padding-right: 1.8rem;
+    }
+    .table tbody tr{
+        font-size: 1.2rem;
+    }
+}
+@media screen and (max-width: 1290px){
+    .table td{
+        padding-top: 0.7rem;
+        padding-left: 0.3rem;
+        padding-right: 1.4rem;
+    }
+    .table tbody tr{
+        font-size: 0.8rem;
+    }
+}
+/* @media screen and (max-width: 1140px){
+    .table td{
+        padding-top: 0.9rem;
+        padding-left: 0.4rem;
+        padding-right: 1.8rem;
+    }
+    .table tbody tr{
+        font-size: 0.8rem;
+    }
+}
+@media screen and (max-width: 1440px){
+    .table td{
+        padding-top: 0.9rem;
+        padding-left: 0.4rem;
+        padding-right: 1.8rem;
+    }
+    .table tbody tr{
+        font-size: 1.2rem;
+    }
+} */

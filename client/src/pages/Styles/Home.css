@@ -1,0 +1,322 @@
+.container{
+    padding: 0;
+    margin: 0;
+    background-color: #1d1b31;
+    min-height: 100vh;
+    max-width: 100%;
+    scroll-behavior: smooth;
+    padding-bottom: 25rem;
+}
+
+/* 
+    Hero
+ */
+
+.hero{
+    background-color: aqua;
+    background-image: linear-gradient(to bottom left, #5500ff, #ff00ea);
+    width: 100%;
+    padding: 0;
+    margin: 0;
+    height: 100vh;
+    overflow-x: hidden;
+}
+.hero svg{
+    padding: 0;
+    margin: 0;
+    position: absolute;
+    top: 60%; 
+    width: 100%;
+}
+.blob svg{
+    width: 35%;
+    position: absolute;
+    top: -23vh;
+    left: -15%;
+    overflow-x: hidden;
+    border-spacing: 0px 0px;
+}
+.blob2 svg{
+    width: 35%;
+    position: absolute;
+    top: 50vh;
+    left: 80%;
+    overflow: hidden;
+    border-spacing: 0px 0px;
+}
+.cta{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding-top: 30vh;
+    z-index: 999;
+}
+.cta h1{
+    font-size: 3rem;
+}
+.cta p{
+    font-size: 1.5rem;
+    color: #ccc;
+}
+.cta .start{
+    transition: all 0.3s ease 0s;
+    margin-top: 4rem;
+    width: 256px;
+    height: 64px;
+    border-radius: 32px;
+    border-color: #ffffff00;
+    background-color: #00ffd5;
+    background-image: linear-gradient(to right, #00ffd5, #00aeff);
+    font-size: 1.7rem;
+    color: #fff;
+    box-shadow: 2px 2px 2px 2px #11111155;
+}
+.btn .start:hover{
+    cursor: pointer;
+    transition: all 0.3s ease 0s;
+    background: #00aeff;
+}
+
+
+.main__btn {
+    font-size: 1.8rem;
+    background: #833ab4;
+    background: linear-gradient(to left, #00ffd5, #00aeff);
+    padding: 10px 50px;
+    border: none;
+    border-radius: 1.9rem;
+    margin-top: 2rem;
+    cursor: pointer;
+    position: relative;
+    transition: all 0.35s;
+    outline: none;
+    transition: all 0.35s;
+}
+
+.main__btn a {
+    position: relative;
+    z-index: 2;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 1.9rem;
+}
+
+.main__btn:hover{
+    transition: all 0.35s;
+    color: #fff;  
+    border-radius: 1.9rem;
+    background: linear-gradient(to top left, #00ffd5dd, #00aeffdd);
+}
+.btn{
+    margin-top: 4rem;
+}
+
+/* 
+    Login
+ */
+
+.login{
+    background-color: #1d1b31;
+    width: 100%;
+    padding: 15rem 0;
+    padding-left: 8rem;
+    z-index: 50;
+    scroll-behavior: smooth;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.login .wrapper{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 85%;
+    margin: 0;
+}
+.login .example img{
+    margin-left: 5rem;
+    width: 70%;
+    border-radius: 10px;
+}
+.login .title{
+    font-size: 62px;
+    font-weight: 600;
+}
+.login .description{
+    font-size: 20px;
+}
+.login .form{
+    padding-top: 1rem;
+}
+.login .email{
+    width: 55%;
+    height: 64px;
+    border-radius: 4px;
+    border: solid 0.px #ff0000;
+    font-size: 1.2rem;
+    padding-left: 1.2rem;
+    outline: none;
+    background-color: #1d1b31;
+    color: white;
+}
+.login .email.filled{
+    border: solid 1px #00ffd5;
+    font-size: 1rem;
+}
+.login .email.exist{
+    border: solid 1px #00aeff;
+}
+.login .submit{
+    width: 35%;
+    height: 64px;
+    margin-left: 2rem;
+    border-color: #ffffff00;
+    border-radius: 8px;
+    font-size: 1.5rem;
+    background-color: #2200ff;
+    border: none;
+    background: linear-gradient(to top left, #00ffd5dd, #00aeffdd);
+    color: white;
+    transition: all 0.2s;
+    font-weight: 400;
+}
+.login .submit:hover{
+    cursor: pointer;
+    transition: all 0.2s;
+    background: linear-gradient(to top, #00ffd5dd, #00aeffdd);
+    font-weight: 400;
+}
+
+/* 
+    Features
+ */
+
+.features{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 2rem 0;
+}
+.features .header{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.features .header h1{
+    font-size: 2.5rem;
+    font-weight: 900;
+}
+.features .header p{
+    font-size: 1.7rem;
+    font-weight: 300;
+}
+.features .features-boxes{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+    padding-top: 5rem;
+
+}
+.features-box{
+    width: 19%;
+    height: 250px;
+    margin: 1rem;
+    border-radius: 8px;
+    box-shadow: rgb(80 78 78 / 50%) 3px 3px 20px;
+    background-color: #1d1b31;
+    
+}
+.features-box h1{
+    margin: 1rem;
+    font-size: 2rem;
+    min-height: 100px;
+}
+.features-box i{
+    text-align: center;
+    vertical-align: middle;
+    border-radius: 1.4rem;
+    padding-top: 0.4rem;
+    width: 2.8rem;
+    height: 2.8rem;
+    background-color: #999;
+}
+.features-box p{
+    margin: 0.8rem 1rem;
+}
+
+
+/* 
+    Markets
+ */
+
+ .content-table {
+    border-collapse: collapse;
+    margin: 25px 0;
+    font-size: 0.9em;
+    min-width: 80%;
+    font-size: 1.3rem;
+    border-radius: 2px 2px 0 0;
+    overflow: hidden;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+  }
+
+.content-table thead tr {
+    background-color: #7a7a7a;
+    color: #ffffff;
+    text-align: left;
+    font-weight: bold;
+}
+
+.content-table tbody th,
+.content-table tbody td {
+        padding: 24px 15px;
+}
+.content-table thead th,
+.content-table thead tr {
+    padding: 12px 15px;
+}
+
+.content-table tbody tr {
+    border-bottom: 1px solid #dddddd44;
+}
+
+.content-table .pairs{
+    padding-right: 10rem;
+}
+.content-table .short{
+    font-size: 1rem;
+    color: #bbb;
+}
+.content-table .percent{
+    color: #dd1111;
+    font-weight: 300;
+}
+.content-table img{
+    border-radius: 16px;
+    width: 32px;
+    vertical-align: middle;
+}
+.content-table td button{
+    padding: 0.5rem 2rem;
+    border-radius: 3px;
+    border: none;
+    background-color: #00aeff;
+    transition: all 0.3s;
+}
+.content-table td button a{
+    text-decoration: none;
+    color: white;
+}
+.content-table td button:hover{
+    cursor: pointer;
+    background-color: #00aeffbb;
+    transition: all 0.3s;
+}
+.markets{
+    display: flex;
+    padding-bottom: 10rem;
+}
