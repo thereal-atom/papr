@@ -1,5 +1,5 @@
 const mongoose = require('mongoose')
-const mongoPath = `mongodb+srv://netninja:tickerlive@cluster0.vd6ei.mongodb.net/paper?retryWrites=true&w=majority`
+const mongoPath = `${mongoUrl}`
 module.exports = async () => {
     await mongoose.connect(mongoPath, {
       useNewUrlParser: true,
