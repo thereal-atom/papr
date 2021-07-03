@@ -1,0 +1,8 @@
+*{
+    scroll-behavior: smooth;
+}
+
+body{
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+}
