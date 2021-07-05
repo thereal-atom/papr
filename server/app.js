@@ -9,14 +9,16 @@ const connectToMongoDB = async () => {await db().then(async (mongoose) => {try{c
 connectToMongoDB() 
 
 const positionRoute = require("./Routes/position");
+const accountRoute = require("./Routes/account")
 
 const app = express()
 const PORT = 5000;
 
-app.use(cors())
+app.use(cors());
 app.use(bodyParser.json());
 
-app.use('/position', positionRoute)
+app.use('/position', positionRoute);
+app.use('/account', accountRoute);
 
 app.get('/', (req, res) => {
     res.sendStatus(200);

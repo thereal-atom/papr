@@ -3,8 +3,8 @@ const router = express.Router();
 
 const controller = require("../controllers/position");
 
-router.get('/', controller.getPositions);
+router.get('/:accId', controller.getPositions);
 router.post('/', controller.buyPosition);
-router.delete('/:id', controller.sellPosition);
+router.delete('/:accId/:id', controller.sellPosition);
 
 module.exports = router;

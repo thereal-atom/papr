@@ -1,8 +1,7 @@
 const positionSchema = require("../models/positionSchema")
-const axios = require("axios");
 
 const getPositions = async (req, res) => {
-    const result = await positionSchema.find({})
+    const result = await positionSchema.find({accountId: req.params.accId})
     if(result){
         res.send(result);
     }else{
@@ -11,13 +10,15 @@ const getPositions = async (req, res) => {
 }
 const buyPosition = async (req, res) => {
     try {
-        const result = await positionSchema.findOne({}).sort({id: -1});
         const { body } = req;
+        const result = await positionSchema.findOne({user: body.user}).sort({id: -1});
         const pos = {
+            user: body.user,
+            accountId: body.accountId,
             entry: body.entry,
+            margin: body.margin,
             amount: body.amount, 
             pair: body.pair,
-            cost: parseFloat(body.entry * body.amount).toFixed(2),
             id: result ? result.id + 1 : 0,
         }
         await new positionSchema(pos).save();
@@ -28,17 +29,12 @@ const buyPosition = async (req, res) => {
     }
 }
 const sellPosition = async (req, res) => {
-    const result = await positionSchema.findOne({id: req.params.id});
-    if(result){
-        try {
-            await positionSchema.deleteOne({id: req.params.id});
-            res.send('Position succesfully deleted');
-        } catch (error) {
-            console.log(error);
-            res.send('There was an error');
-        }
-    }else{
-        res.send('This position does not exist');
+    try {
+        await positionSchema.deleteOne({id: req.params.id, accountId: req.params.accId});
+        res.send('Position succesfully deleted');
+    } catch (error) {
+        console.log(error);
+        res.send('There was an error');
     }
 }
 
