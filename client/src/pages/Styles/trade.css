@@ -9,6 +9,7 @@
     margin-right: 1rem;
     margin-left: 1rem;
     background-color: #4f4370;
+    padding: 1rem;
     min-height: 140px;
     border-radius: 5px;
     transition: all 0.3s;
@@ -20,7 +21,7 @@
     transform: scale(1.02);
     box-shadow: 4px 4px 4px 4px #11111166   ;
 }
-.markets{
+.trade-markets{
     display: flex;
     justify-content: center;
     align-items: center;
@@ -28,10 +29,6 @@
     width: 90%;
 }
 
-.content{
-    padding-top: 0.5rem;
-    padding-left: 0.8rem;
-}
 .content .pair{
     font-size: 1.6rem;
 }
@@ -66,53 +63,13 @@
 }
 .table{
     background: #4d4370;
-    margin-top: 3rem;
     width: 95%;
     padding-bottom: 10rem;
     margin-bottom: 10rem;
     border-radius: 5px;
-    box-shadow: 1px 1px 1px 1px #11111155;
-    display: flex;
 }
 .table table{
-    padding-top: 0.7rem;
     width: 100%;
-}
-.table thead tr{
-    color: rgb(189, 255, 241);
-    font-weight: bold;
-    font-size: 1.4rem;
-}
-.table td{
-    padding-top: 1.3rem;
-    padding-left: 1.9rem;
-    padding-right: 1.9rem;
-}
-.table .trade button{
-    color: white;
-    border: none;
-    padding: 0.2rem 3rem;
-    font-size: 1.2rem;
-    background-color: #2d2a5a;
-    border-radius: 16px;
-    transition: all 0.3s;   
-}
-.table .trade a{
-    text-decoration: none;
-    color: white;
-}
-.table .trade button:hover{
-    cursor: pointer;
-    transform: scale(1.02);
-    background-color: #373370;
-    transition: all 0.3s;
-}
-.table tbody tr{
-    text-align: center;
-    font-size: 1.2rem;
-}
-.table tbody tr:hover{
-    cursor: pointer;
 }
 
 .neg{
@@ -184,3 +141,80 @@
         font-size: 1.2rem;
     }
 } */
+.trade-markets .content-table {
+    border-collapse: collapse;
+    font-size: 0.9em;
+    min-width: 80%;
+    font-size: 1.3rem;
+    border-radius: 2px 2px 0 0;
+    overflow: hidden;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+  }
+
+.trade-markets .content-table thead tr {
+    background-color: #7a7a7a;
+    color: #ffffff;
+    text-align: left;
+    font-weight: bold;
+}
+
+.trade-markets .content-table tbody th,
+.trade-markets .content-table tbody td {
+        padding: 12px 15px;
+}
+.trade-markets .content-table thead th,
+.trade-markets .content-table thead tr {
+    padding: 12px 15px;
+}
+
+.trade-markets .content-table tbody tr {
+    border-bottom: 1px solid #dddddd44;
+}
+
+.trade-markets .content-table .short{
+    font-size: 1rem;
+    color: #bbb;
+}
+.trade-markets .content-table .percent{
+    color: #dd1111;
+    font-weight: 300;
+}
+.trade-markets .content-table img{
+    border-radius: 16px;
+    width: 32px;
+    vertical-align: middle;
+}
+.trade-markets .content-table td button{
+    padding: 0.5rem 2rem;
+    border-radius: 3px;
+    border: none;
+    background-color: #00aeff;
+    transition: all 0.3s;
+}
+.trade-markets .content-table td button a{
+    text-decoration: none;
+    color: white;
+}
+.trade-markets .content-table td button:hover{
+    cursor: pointer;
+    background-color: #00aeffbb;
+    transition: all 0.3s;
+}
+.trade-markets .content-table .pairs{
+    padding-left: 6rem;
+}
+.searchbar{
+    display: flex;
+    width: 93%;
+    flex-direction: row-reverse;
+    margin-top: 3rem;
+    margin-bottom: 8px;
+}
+.container .search-bar{
+    border-radius: 20px;
+    height: 40px;
+    width: 160px;
+    border: none;
+    background-color: #4f4370;
+    padding-left: 1rem;
+}

@@ -8,29 +8,27 @@ const Trade = () => {
     const[vol, setVol] = useState();
     const[percent, setPercent] = useState();
     const[list, setList] = useState();
-    const fetchInfo = async () =>{
-        const { data } = await axios.get("https://api.binance.com/api/v3/ticker/24hr?symbol=ETHUSDT");
-        const { lastPrice, quoteVolume, lowPrice } = data;
-        setPrice(parseFloat(lastPrice).toFixed(2));
-        setVol(parseFloat(quoteVolume).toFixed(2))
-        setPercent(parseFloat(((lastPrice - lowPrice) / lowPrice) * 100).toFixed(2));
-
-        let prices = []
-        const filtered = await axios.get(`https://api.binance.com/api/v3/ticker/24hr`);
-        filtered.data.forEach(filter => {
-            if(parseFloat(filter.quoteVolume).toFixed(0) > 50000000 && filter.lastPrice > 0.01 && (filter.priceChangePercent > 1 || filter.priceChangePercent < -1) ) prices.push(filter);
-        })
-        //prices.sort((a, b) => (a.quoteVolume > b.quoteVolume) ? 1 : (b.quoteVolume > a.quoteVolume ? -1 : 0));
-        //prices.sort((a, b) => (parseFloat(a.quoteVolume).toFixed(0).toString().length < parseFloat(b.quoteVolume).toFixed(0).toString().length) ? 1 : ((parseFloat(b.quoteVolume).toFixed(0).toString().length < parseFloat(a.quoteVolume).toFixed(0).toString().length) ? -1 : 0))
-        setList(prices);
-        console.log('Data fetched');
-    }
+    const[searchQuery, setSearchQuery] = useState();
     const fetchPrice = () => {
-        fetchInfo();
         setInterval(async () => {
-            fetchInfo();
+            const { data } = await axios.get("https://api.binance.com/api/v3/ticker/24hr?symbol=ETHUSDT");
+            const { lastPrice, quoteVolume, lowPrice } = data;
+            setPrice(parseFloat(lastPrice).toFixed(2));
+            setVol(parseFloat(quoteVolume).toFixed(2))
+            setPercent(parseFloat(((lastPrice - lowPrice) / lowPrice) * 100).toFixed(2));
+    
+            let prices = []
+            const filtered = await axios.get(`https://api.binance.com/api/v3/ticker/24hr`);
+            filtered.data.forEach(filter => {
+                if(parseFloat(filter.quoteVolume).toFixed(0) > 1000000 && filter.lastPrice > 0.01 && (filter.priceChangePercent > 0.25 || filter.priceChangePercent < -0.25) ) prices.push(filter);
+            })
+            setList(prices);
+            console.log('Data fetched');
         }, 3000)
     }
+    const handleSearchQuery = (e) => {
+        e.target.value ? setSearchQuery(e.target.value.toUpperCase()) : setSearchQuery();
+    } 
     useEffect(() => {
         fetchPrice();
     }, [])
@@ -66,11 +64,40 @@ const Trade = () => {
                         <div className="change">24h +3.29% <div className="amount">$0.043</div></div>
                     </div>
                 </div>
-                
             </div>
-            <div className="markets">
+
+            <div className="trade-markets">
+                <div className="searchbar">
+                    <input type="text" placeholder="Search" className="search-bar" onChange={handleSearchQuery}/>
+                </div>
                 {list ? <div className="table">
-                    <table>
+
+
+                <table class="content-table">
+                    <thead>
+                        <tr>
+                            <th className="pairs">Pair</th>
+                            <th>Price</th>
+                            <th>Change</th>
+                            {/* <th>Volume</th> */}
+                            <th>Trade</th>   
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {list.map((row, i) => (
+                            
+                                row.symbol.includes("USDT") && (searchQuery ? row.symbol.includes(searchQuery) : true) ? <tr key={i}>
+                                    <td className="pairs">{row.symbol}</td>
+                                    <td>{parseFloat(row.lastPrice).toFixed(2)}</td>
+                                    <td className={parseFloat(row.priceChangePercent).toFixed(2) > 0 ? "%change pos" : "%change neg"}>{parseFloat(row.priceChangePercent).toFixed(2) > 0 ? `+${parseFloat(row.priceChangePercent).toFixed(2)}` : parseFloat(row.priceChangePercent).toFixed(2)}%</td>
+                                    {/* <td className="volum">${parseFloat(row.quoteVolume).toFixed(2)}</td> */}
+                                    {/* <td className="cap">Unavailable</td> */}
+                                    <td><button><a href={`trade/${row.symbol}`}>Trade</a></button></td>
+                                </tr> : ''
+                            ))}
+                    </tbody>
+                </table>
+                    {/* <table>
                         <thead>
                             <tr>
                                 <th className="pair">Pair</th>
@@ -83,7 +110,7 @@ const Trade = () => {
                         </thead>
                         <tbody>
                             {list.map((row, i) => (
-                                i < 60000 ? <tr key={i}>
+                                row.symbol.includes("USDT") && (searchQuery ? row.symbol.includes(searchQuery) : true) ? <tr key={i}>
                                     <td className="pair">{row.symbol}</td>
                                     <td className={row.lastPrice > row.askPrice ? "price pos" : "price neg"}>{parseFloat(row.lastPrice).toFixed(2)}</td>
                                     <td className={parseFloat(row.priceChangePercent).toFixed(2) > 0 ? "%change pos" : "%change neg"}>{parseFloat(row.priceChangePercent).toFixed(2) > 0 ? `+${parseFloat(row.priceChangePercent).toFixed(2)}` : parseFloat(row.priceChangePercent).toFixed(2)}%</td>
@@ -95,7 +122,7 @@ const Trade = () => {
                             
                         </tbody>
                         
-                    </table>
+                    </table> */}
                 </div> : <h1>Loading...</h1>}
             </div>
         </div>

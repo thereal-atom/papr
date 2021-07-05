@@ -1,22 +1,44 @@
 import './Navbar.css';
-import React, { useState, } from 'react';
-import { BrowserRouter as Router, Route, Switch, useParams } from 'react-router-dom';
-
-import Portfolio from '../../pages/Portfolio';
-import Trade from '../../pages/Trade';
-import News from '../../pages/News'
-import Home from '../../pages/Home'
-import Pair from '../../pages/Pair'
+import React, { useState, useEffect } from 'react';
+import axios from 'axios';
+import { useAuth } from "../../contexts/AuthContext";
+import { useHistory } from "react-router-dom";
 
 const Navbar = () => {
+
     const[active, setActive] = useState('sidebar');
+    const[balance, setBalance] = useState();
+    const { currentUser, logout } = useAuth();
+    
     const handleActive = () => {
         active === 'sidebar' ? setActive(active + ' active') : setActive('sidebar')
     }
+    const getBalance = async () => {
+        if(currentUser) {
+            setInterval(async() => {
+                const result = await axios.get(`http://localhost:5000/account/${currentUser.email}`);
+                const { balance } = result.data
+                setBalance(balance) 
+            }, 2500);
+
+        }
+    }
+    const handleLogout = async () => {
+        try {
+            await logout()
+        } catch(error) {
+            console.log(error);
+            alert("Failed to log out")
+        }
+    }
+    useEffect(() => {
+        getBalance();
+    }, [])
+
+
     return(
         
         <div className="app">
-            <Router>
             <div className={active}>
                 <div className="logo_content">
                     <div className="logo">
@@ -42,9 +64,9 @@ const Navbar = () => {
                     <li>
                         <a href="/trade">
                         <i class='bx bx-exclude'></i>
-                        <span className="links_name">Trade</span>
+                        <span className="links_name">Markets</span>
                         </a>
-                        <span className="tooltip">Trade</span>
+                        <span className="tooltip">Markets</span>
                     </li>
                     <li>
                         <a href="/portfolio">
@@ -78,28 +100,16 @@ const Navbar = () => {
                 <div className="profile_content">
                     <div className="profile">
                         <div className="profile_details">
-                            <img src="logo512.png" alt="Avatar" />
+                            {currentUser ? <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/80/Atom_editor_logo.svg/1200px-Atom_editor_logo.svg.png" alt="Avatar" />  : ''}
                             <div className="name_job">
-                                <div className="name">Atom</div>
-                                <div className="job">Balance: $536.04</div>
+                                <div className="name">{currentUser ? currentUser.email : <a href="/login">Login</a>}</div>
+                                <div className="job">Available: ${currentUser && balance ? parseFloat(balance).toFixed(2) : 0}</div>
                             </div>
                         </div>
-                        <i className='bx bx-log-out' id="log_out" ></i>
+                        {currentUser ? <button onClick={handleLogout}><i className='bx bx-log-out' id="log_out"></i></button> : ''}
                     </div>
                 </div>
             </div>
-            <Switch>
-                <div className="home_content">
-                    <Route path="/" exact><Home /></Route>
-                    <Route path="/trade/:pair" children={<Pair />}></Route>
-                    <Route path="/trade" exact><Trade /></Route>
-                    <Route path="/portfolio"><Portfolio /></Route>
-                    <Route path="/news"><News /></Route>
-                    {/* <Route path="/accounts"><Account /></Route>
-                    <Route path="/settings"><Settings /></Route> */}
-                </div>
-            </Switch>
-            </Router>
 
 
         </div>

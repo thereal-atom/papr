@@ -1,16 +1,73 @@
-h3{
-    color: #000;
+.pair-container{
+    height: 100vh;
+    background-color: #1d1b31;
+    display: flex;
+    flex-direction: column;
+    overflow-y: hidden;
 }
-
-.input{
-    border: none;
-    background-color: aqua;
+.trade-info{
+    height: 90vh;
+    width: 55%;
 }
-.input.false{
-    border: none;
-    background-color: red;
+.trading{
+    max-height: 90vh;
+    display: flex;
+}
+.trades{
+    width: 27%;
+}
+.order{
+    width: 17.5%;
+    height: 91.7vh;
+    background-color: #131722;
+}
+.watchlist{
+    width: 17%;
+    margin-left: 0.4rem;
+    height: 91.7vh;
+    background-color: #131722;
+}
+.book{
+    height: 50vh;
+    margin-left: 0.4rem;
+    margin-right: 0.4rem;
+    margin-bottom: 0.4rem;
+    background-color: #131722;
+}
+.recent-trades{
+    height: 41vh;
+    margin: 0 0.4rem;
+    background-color: #131722;
+}
+.open-orders{
+    width: 100%;
+    height: 41vh;
+    margin: 0.4rem 0;
+    background-color: #131722;
+}
+.chart{
+    z-index: 100;
+    width: 100%;
+    height: 50vh;
+}
+.bar{
+    margin-bottom: 0.4rem;
+    padding: 0.5rem 0;
+    padding-left: 1rem;
+    width: 100%;
+    background-color: #131722;
 }
 .error{
     background-color: #1d1b31;
     min-height: 100vh;
+}
+.position{
+    display: flex;
+    flex-direction: row;
+    border: white solid 1px;
+    border-radius: 5px;
+    padding-left: 1rem;
+}
+.position p{
+    margin: 0.4rem;
 }

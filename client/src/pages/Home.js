@@ -49,7 +49,7 @@ const Home = () => {
                     </div>
                 </div>
             </div>
-            <div className="markets">
+            <div className="home-markets">
                 <table class="content-table">
                     <thead>
                         <tr>
@@ -82,10 +82,6 @@ const Home = () => {
                 </table>
             </div>
             <div className="features">
-                <div className="header">
-                    <h1>Features</h1>
-                    <p>Free crypto papaer trading platform</p>
-                </div>
                 <div className="features-boxes">
                     <div className="features-box">
                         <h1><i class="fas fa-list"></i> Watchlist</h1>
