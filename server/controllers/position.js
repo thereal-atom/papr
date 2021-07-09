@@ -13,14 +13,16 @@ const buyPosition = async (req, res) => {
         const { body } = req;
         const result = await positionSchema.findOne({user: body.user}).sort({id: -1});
         const pos = {
+            id: result ? result.id + 1 : 0,
             user: body.user,
             accountId: body.accountId,
             entry: body.entry,
             margin: body.margin,
             amount: body.amount, 
             pair: body.pair,
-            id: result ? result.id + 1 : 0,
+            leverage: body.leverage,
         }
+        console.log(body);
         await new positionSchema(pos).save();
         res.send('Position sucessfully entered');
     } catch (error) {
