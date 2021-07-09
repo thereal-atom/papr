@@ -217,7 +217,9 @@
   font-size: 20px;
   border-radius: 12px;
   text-align: center;
+  padding-right: 0.4rem;
   transition: all 0.4s ease;
+  color: white;
   background: #1d1b31;
 }
 .profile #log_out:hover{
@@ -238,3 +240,34 @@
   transition: all 0.5s ease;
   color: #fff;
 }
+.nav-login-signup{
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  flex-direction: row;
+  width: 200px;
+  height: 40px;
+  font-size: 1rem;
+  text-align: center;
+  transition: all 0.4s ease;
+}
+.nav-navbar-login{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100px;
+  height: 40px;
+}
+.nav-navbar-signup{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100px;
+  height: 40px;
+  background-image: linear-gradient(to right, #ff00ff, #7700ff);
+  border-radius: 10px;
+}
+.open_positions-table thead tr th{
+  padding-left: 2rem;
+}
+

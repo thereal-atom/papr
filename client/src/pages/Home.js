@@ -3,14 +3,6 @@ import React, { useEffect, useState } from 'react';
 import './Styles/Home.css';
 
 const Home = () => {
-    const [filled, setFilled] = useState('email filled');
-    const [email, setEmail] = useState();
-    const handleChange = (e) =>{
-        setEmail(e.target.value);
-        const re = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-        const result = re.test(String(e.target.value).toLowerCase());;
-        result ? setFilled('email exist') : setFilled('email filled');
-    }
     return(
         <div className="container">
             <div className="hero">
@@ -34,13 +26,33 @@ const Home = () => {
                     </div>
                 </div>
             </div>
+            <div className="features">
+                <div className="features-boxes">
+                    <div className="features-box">
+                        <h1><i class="fas fa-list"></i> Watchlist</h1>
+                        <p>Customisable watchlist with info about any crpyto pair you desire. Get notifications of breaking news relating to your watchlist.</p>
+                    </div>
+                    <div className="features-box">
+                        <h1><i class="fas fa-chart-bar"></i> Manage your portfolio</h1>
+                        <p>Buy and sell popular digital currencies, keep track of them in the one place. See your past trading data and your current open positions.</p>
+                    </div>
+                    <div className="features-box">
+                        <h1><i class="fas fa-chart-line"></i> Live market data</h1>
+                        <p>In depth market data about every pair in real time.</p>
+                    </div>
+                    <div className="features-box">
+                        <h1><i class="fas fa-newspaper"></i> Breaking crypto news</h1>
+                        <p>Show you up to date breaking crypto news. Get notifications based on your watchlist.</p>
+                    </div>
+                </div>
+            </div>
             <div className="login">
                 <div className="wrapper">
                     <div className="text">
                         <h1 className="title">Jump start your crypto portfolio</h1>
                         <p className="description">Coinbase is the easiest place to buy and sell cryptocurrency. Sign up and get started today..</p>
                         <div className="form">
-                            <input type="text" placeholder="Email address" className={filled}  id="login" onChange={handleChange} />
+                            <input type="text" placeholder="Email address" className="email"  id="login"/>
                             <button className="submit">Sign up</button>
                         </div>
                     </div>
@@ -81,27 +93,6 @@ const Home = () => {
                     </tbody>
                 </table>
             </div>
-            <div className="features">
-                <div className="features-boxes">
-                    <div className="features-box">
-                        <h1><i class="fas fa-list"></i> Watchlist</h1>
-                        <p>Customisable watchlist with info about any crpyto pair you desire. Get notifications of breaking news relating to your watchlist.</p>
-                    </div>
-                    <div className="features-box">
-                        <h1><i class="fas fa-chart-bar"></i> Manage your portfolio</h1>
-                        <p>Buy and sell popular digital currencies, keep track of them in the one place. See your past trading data and your current open positions.</p>
-                    </div>
-                    <div className="features-box">
-                        <h1><i class="fas fa-chart-line"></i> Live market data</h1>
-                        <p>In depth market data about every pair in real time.</p>
-                    </div>
-                    <div className="features-box">
-                        <h1><i class="fas fa-newspaper"></i> Breaking crypto news</h1>
-                        <p>Show you up to date breaking crypto news. Get notifications based on your watchlist.</p>
-                    </div>
-                </div>
-            </div>
-            
         </div>
     );
 };

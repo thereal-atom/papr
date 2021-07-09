@@ -1,5 +1,6 @@
 import axios from 'axios';
 import React, { useEffect, useState } from 'react';
+import { useAuth } from "../contexts/AuthContext";
 
 import './Styles/trade.css'
 
@@ -9,21 +10,28 @@ const Trade = () => {
     const[percent, setPercent] = useState();
     const[list, setList] = useState();
     const[searchQuery, setSearchQuery] = useState();
+    const { currentUser } = useAuth();
+
+    const fetchListPrice = async () => {
+        const { data } = await axios.get("https://api.binance.com/api/v3/ticker/24hr?symbol=ETHUSDT");
+        const { lastPrice, quoteVolume, lowPrice } = data;
+        setPrice(parseFloat(lastPrice).toFixed(2));
+        setVol(parseFloat(quoteVolume).toFixed(2))
+        setPercent(parseFloat(((lastPrice - lowPrice) / lowPrice) * 100).toFixed(2));
+        let prices = []
+        const filtered = await axios.get(`https://fapi.binance.com/fapi/v1/ticker/24hr`);
+        filtered.data.forEach(filter => {
+            if( filter.lastPrice > 0.01 && (filter.priceChangePercent > 0.25 || filter.priceChangePercent < -0.25) && filter.quoteVolume > 1000000 && !filter.symbol.includes('_')) prices.push(filter)
+        })
+        prices.sort((a, b) => parseFloat(b.quoteVolume) - parseFloat(a.quoteVolume));
+        setList(prices);
+        console.log('Data fetched');
+    }
+
     const fetchPrice = () => {
-        setInterval(async () => {
-            const { data } = await axios.get("https://api.binance.com/api/v3/ticker/24hr?symbol=ETHUSDT");
-            const { lastPrice, quoteVolume, lowPrice } = data;
-            setPrice(parseFloat(lastPrice).toFixed(2));
-            setVol(parseFloat(quoteVolume).toFixed(2))
-            setPercent(parseFloat(((lastPrice - lowPrice) / lowPrice) * 100).toFixed(2));
-    
-            let prices = []
-            const filtered = await axios.get(`https://api.binance.com/api/v3/ticker/24hr`);
-            filtered.data.forEach(filter => {
-                if(parseFloat(filter.quoteVolume).toFixed(0) > 1000000 && filter.lastPrice > 0.01 && (filter.priceChangePercent > 0.25 || filter.priceChangePercent < -0.25) ) prices.push(filter);
-            })
-            setList(prices);
-            console.log('Data fetched');
+        fetchListPrice();
+        setInterval(() => {
+            fetchListPrice();
         }, 3000)
     }
     const handleSearchQuery = (e) => {
@@ -33,7 +41,11 @@ const Trade = () => {
         fetchPrice();
     }, [])
     return(
-        <div className="container">
+        <div className="markets-container">
+            {currentUser ? '' : <div className="login-signup">
+                <a href="/login"><div className="navbar-login">Login</div></a>
+                <a href="/signup"><div className="navbar-signup">Signup</div></a>
+            </div>}
             <div className="trending">
                 <div className="box">
                     <div className="content">
@@ -73,7 +85,7 @@ const Trade = () => {
                 {list ? <div className="table">
 
 
-                <table class="content-table">
+                <table class="markets-content-table">
                     <thead>
                         <tr>
                             <th className="pairs">Pair</th>
@@ -88,7 +100,7 @@ const Trade = () => {
                             
                                 row.symbol.includes("USDT") && (searchQuery ? row.symbol.includes(searchQuery) : true) ? <tr key={i}>
                                     <td className="pairs">{row.symbol}</td>
-                                    <td>{parseFloat(row.lastPrice).toFixed(2)}</td>
+                                    <td>{parseFloat(row.lastPrice).toFixed(2).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',')}</td>
                                     <td className={parseFloat(row.priceChangePercent).toFixed(2) > 0 ? "%change pos" : "%change neg"}>{parseFloat(row.priceChangePercent).toFixed(2) > 0 ? `+${parseFloat(row.priceChangePercent).toFixed(2)}` : parseFloat(row.priceChangePercent).toFixed(2)}%</td>
                                     {/* <td className="volum">${parseFloat(row.quoteVolume).toFixed(2)}</td> */}
                                     {/* <td className="cap">Unavailable</td> */}
@@ -97,33 +109,7 @@ const Trade = () => {
                             ))}
                     </tbody>
                 </table>
-                    {/* <table>
-                        <thead>
-                            <tr>
-                                <th className="pair">Pair</th>
-                                <th className="price_h">Price</th>
-                                <th className="%change">Change</th>
-                                <th className="volume">Volume</th>
-                                <th className="cap">Market cap</th>
-                                <th className="trade">Trade</th>                          
-                            </tr>
-                        </thead>
-                        <tbody>
-                            {list.map((row, i) => (
-                                row.symbol.includes("USDT") && (searchQuery ? row.symbol.includes(searchQuery) : true) ? <tr key={i}>
-                                    <td className="pair">{row.symbol}</td>
-                                    <td className={row.lastPrice > row.askPrice ? "price pos" : "price neg"}>{parseFloat(row.lastPrice).toFixed(2)}</td>
-                                    <td className={parseFloat(row.priceChangePercent).toFixed(2) > 0 ? "%change pos" : "%change neg"}>{parseFloat(row.priceChangePercent).toFixed(2) > 0 ? `+${parseFloat(row.priceChangePercent).toFixed(2)}` : parseFloat(row.priceChangePercent).toFixed(2)}%</td>
-                                    <td className="volum">${parseFloat(row.quoteVolume).toFixed(2)}</td>
-                                    <td className="cap">Unavailable</td>
-                                    <td className="trade"><button><a href={`trade/${row.symbol}`}>Trade</a></button></td>
-                                </tr> : ''
-                            ))}
-                            
-                        </tbody>
-                        
-                    </table> */}
-                </div> : <h1>Loading...</h1>}
+                </div> : <div className="loading"><i class='bx bx-loader'></i></div>}
             </div>
         </div>
     );

@@ -1,4 +1,4 @@
-.container{
+.news-container{
     background: #252336;
     min-height: 100vh;
     display: flex;
@@ -6,6 +6,10 @@
     flex-direction: column;
     padding-top: 4vh;
     padding-bottom: 20rem;
+}
+.news-container a{
+    color: white;
+    text-decoration: none;
 }
 .title{
     padding-bottom: 5rem;
@@ -28,6 +32,9 @@
     margin-right: 3rem;
     border-radius: 10px;
     transition: all 0.3s ease 0s;
+}
+.top img{
+    height: 41vh;
 }
 .top:hover{
     cursor: pointer;
@@ -133,4 +140,28 @@
 }
 .other-description{
     color: #ccc;
+}
+.login-signup{
+    position: absolute;
+    left: 80%;
+    top: 4vh;
+    font-size: 1.4rem;
+    display: flex;
+    justify-content: center;
+    width: 250px;
+}
+.login-signup a{
+    width: 200px;
+}
+.navbar-login{
+    padding: 0.5rem;
+    width: 100%;
+    text-align: center;
+}
+.navbar-signup{
+    padding: 0.5rem;
+    width: 100%;
+    text-align: center;
+    background-image: linear-gradient(to right, #ff00ff, #7700ff);
+    border-radius: 10px;
 }

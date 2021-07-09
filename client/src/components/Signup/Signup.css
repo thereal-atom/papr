@@ -1,4 +1,199 @@
 .signup-container{
     background-color: #1d1b31;
+    /* background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' version='1.1' xmlns:xlink='http://www.w3.org/1999/xlink' xmlns:svgjs='http://svgjs.com/svgjs' width='1920' height='1080' preserveAspectRatio='none' viewBox='0 0 1920 1080'%3e%3cg mask='url(%26quot%3b%23SvgjsMask1241%26quot%3b)' fill='none'%3e%3crect width='1920' height='1080' x='0' y='0' fill='url(%23SvgjsLinearGradient1242)'%3e%3c/rect%3e%3cpath d='M1837.548%2c773.403C1929.52%2c773.234%2c2028.749%2c756.415%2c2076.599%2c677.871C2125.94%2c596.879%2c2108.308%2c492.916%2c2057.027%2c413.138C2009.844%2c339.735%2c1924.808%2c306.135%2c1837.548%2c305.974C1749.962%2c305.812%2c1664.154%2c338.733%2c1616.661%2c412.325C1564.907%2c492.519%2c1547.167%2c597.332%2c1596.974%2c678.75C1645.172%2c757.539%2c1745.186%2c773.572%2c1837.548%2c773.403' fill='rgba(28%2c 83%2c 142%2c 0.4)' class='triangle-float2'%3e%3c/path%3e%3cpath d='M317.796%2c1171.637C390.141%2c1171.171%2c437.071%2c1101.568%2c468.544%2c1036.426C495.435%2c980.768%2c492.947%2c919.386%2c466.711%2c863.416C434.812%2c795.366%2c392.87%2c718.332%2c317.796%2c714.834C239.23%2c711.173%2c176.564%2c777.317%2c142.736%2c848.321C113.353%2c909.994%2c131.118%2c978.317%2c163.645%2c1038.391C198.305%2c1102.405%2c245.003%2c1172.106%2c317.796%2c1171.637' fill='rgba(28%2c 83%2c 142%2c 0.4)' class='triangle-float2'%3e%3c/path%3e%3cpath d='M698.3594579619887 406.01907575826664L850.0307067180858 691.2712073259852 1135.2828382858042 539.5999585698883 983.6115895297073 254.34782700216962z' fill='rgba(28%2c 83%2c 142%2c 0.4)' class='triangle-float2'%3e%3c/path%3e%3cpath d='M1575.861%2c1134.463C1659.692%2c1131.402%2c1744.496%2c1107.528%2c1789.3%2c1036.608C1837.052%2c961.022%2c1839.056%2c864.645%2c1795.727%2c786.44C1751.049%2c705.802%2c1668.049%2c651.5%2c1575.861%2c651.374C1483.467%2c651.248%2c1402.653%2c706.709%2c1354.952%2c785.837C1305.472%2c867.917%2c1282.3%2c972.294%2c1333.599%2c1053.25C1382.46%2c1130.359%2c1484.636%2c1137.794%2c1575.861%2c1134.463' fill='rgba(28%2c 83%2c 142%2c 0.4)' class='triangle-float1'%3e%3c/path%3e%3cpath d='M1141.91 213.24 a335.71 335.71 0 1 0 671.42 0 a335.71 335.71 0 1 0 -671.42 0z' fill='rgba(28%2c 83%2c 142%2c 0.4)' class='triangle-float2'%3e%3c/path%3e%3cpath d='M108.03667176441131 522.6912701760009L213.80940354847797 798.238657089463 489.35679046194014 692.4659253053965 383.5840586778735 416.91853839193425z' fill='rgba(28%2c 83%2c 142%2c 0.4)' class='triangle-float1'%3e%3c/path%3e%3c/g%3e%3cdefs%3e%3cmask id='SvgjsMask1241'%3e%3crect width='1920' height='1080' fill='white'%3e%3c/rect%3e%3c/mask%3e%3clinearGradient x1='10.94%25' y1='119.44%25' x2='89.06%25' y2='-19.44%25' gradientUnits='userSpaceOnUse' id='SvgjsLinearGradient1242'%3e%3cstop stop-color='rgba(255%2c 0%2c 254%2c 1)' offset='0'%3e%3c/stop%3e%3cstop stop-color='rgba(0%2c 2%2c 255%2c 1)' offset='1'%3e%3c/stop%3e%3c/linearGradient%3e%3cstyle%3e %40keyframes float1 %7b 0%25%7btransform: translate(0%2c 0)%7d 50%25%7btransform: translate(-10px%2c 0)%7d 100%25%7btransform: translate(0%2c 0)%7d %7d .triangle-float1 %7b animation: float1 5s infinite%3b %7d %40keyframes float2 %7b 0%25%7btransform: translate(0%2c 0)%7d 50%25%7btransform: translate(-5px%2c -5px)%7d 100%25%7btransform: translate(0%2c 0)%7d %7d .triangle-float2 %7b animation: float2 4s infinite%3b %7d %40keyframes float3 %7b 0%25%7btransform: translate(0%2c 0)%7d 50%25%7btransform: translate(0%2c -10px)%7d 100%25%7btransform: translate(0%2c 0)%7d %7d .triangle-float3 %7b animation: float3 6s infinite%3b %7d %3c/style%3e%3c/defs%3e%3c/svg%3e"); */
     height: 100vh;
+    background-image: linear-gradient(to left, rgb(102, 0, 255), rgba(255, 0, 254, 1));
 }
+.signup-card-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding-top: 10vh;
+    transition: all 0.3s ease;
+}
+.card-container{
+    width: 32%;
+    height: 80vh;
+    background-color: #fff;
+    color: #000;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 1rem;
+    border-radius: 6px;
+    box-shadow: 2px 2px 2px 2px #11111155;
+}
+.card-container h2{
+    font-size: 3rem;
+    padding-bottom: 1rem;
+    font-weight: 500;
+}
+.card-container .card-inputs{
+    margin-top: 1rem;
+    width: 80%;
+    height: 60px;
+    border-radius: 4px;
+    border: solid 0.2px #000;
+    background-color: #fff;
+    font-size: 1.2rem;
+    padding-left: 1.2rem;
+    outline: none;
+    color: #000;
+    box-shadow: 2px 2px 2px 2px #11111155;
+    -webkit-box-shadow: 0 0 0 30px white inset;
+}
+.card-body{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.card-form{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+.card-form-group{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.submit-button{
+    width: 80%;
+    height: 48px;
+    border-radius: 4px;
+    border: none;
+    font-size: 1.5rem;
+    background-image: linear-gradient(to left, #7700ff, #ff00ff);
+    margin-left: 10%;
+    margin-right: 10%;
+    color: #fff;
+    box-shadow: 2px 2px 2px 2px #11111155;
+}
+.account-login{
+    margin-top: 6%;
+}
+.account-signup{
+    margin-top: 0%;
+}
+.card-link{
+    text-decoration: none;
+    color: #222;
+    background: -webkit-linear-gradient(right, #7700ff, #ff00ff);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+.submit-button:hover{
+    cursor: pointer;
+}
+.signup-error{
+    color: #ff5353;
+}
+.form-tab{
+    display: flex;
+    align-items: center;
+    font-size: 1.6rem;
+    border-color: black;
+    border-radius: 6px;
+    margin-top: 2vh;
+    border: solid 0.2px #555;
+    width: 80%;
+    height: 7vh;
+    text-align: center;
+}
+.form-tab .signup-tab{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: -webkit-linear-gradient(right, #7700ff, #ff00ff);
+    color: #fff;
+    border-radius: 6px;
+}
+.form-tab .login-tab{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #000;
+    text-decoration: none;
+}
+.reset-password{
+    text-decoration: none;
+    color: #222;
+    background: -webkit-linear-gradient(right, #7700ff, #ff00ff);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    padding-left: 10%;
+    padding-top: 0.5rem;
+}
+.note{
+    padding-left: 10%;
+    color: #333;
+    font-size: 0.8rem;
+}
+
+@media only screen and (max-width: 1350px){
+    .card-container{
+        width: 50%;
+    }
+}
+@media only screen and (max-width: 1150px){
+    .card-container{
+        width: 60%;
+    }
+}
+@media only screen and (max-width: 900px){
+    .card-container{
+        width: 70%;
+    }
+}
+@media only screen and (max-width: 720px){
+    .card-container{
+        width: 95%;
+    }
+}
+@media only screen and (max-width: 475px){
+    .card-container{
+        width: 100%;
+    }
+}
+
+
+.card-container.dark{
+    background-color: #1d1b31;
+    color: #fff;
+}
+.card-container.dark .note{
+    color: #ccc;
+}
+.card-container.dark .card-inputs{
+    border: solid 0.2px #ccc;
+    background-color: #1d1b31;
+    -webkit-box-shadow: 0 0 0 30px #1d1b31 inset;
+}
+.card-container.dark .card-inputs::placeholder{
+    color: #ccc;
+}
+.card-container.dark .form-tab .signup-tab{
+    color: #fff;
+}
+.card-container.dark .form-tab .login-tab{
+    color: #fff;
+}
+
+
+
+
+
+
+
+
+
+    /* background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' version='1.1' xmlns:xlink='http://www.w3.org/1999/xlink' xmlns:svgjs='http://svgjs.com/svgjs' width='1920' height='1080' preserveAspectRatio='none' viewBox='0 0 1920 1080'%3e%3cg mask='url(%26quot%3b%23SvgjsMask1241%26quot%3b)' fill='none'%3e%3crect width='1920' height='1080' x='0' y='0' fill='url(%23SvgjsLinearGradient1242)'%3e%3c/rect%3e%3cpath d='M1837.548%2c773.403C1929.52%2c773.234%2c2028.749%2c756.415%2c2076.599%2c677.871C2125.94%2c596.879%2c2108.308%2c492.916%2c2057.027%2c413.138C2009.844%2c339.735%2c1924.808%2c306.135%2c1837.548%2c305.974C1749.962%2c305.812%2c1664.154%2c338.733%2c1616.661%2c412.325C1564.907%2c492.519%2c1547.167%2c597.332%2c1596.974%2c678.75C1645.172%2c757.539%2c1745.186%2c773.572%2c1837.548%2c773.403' fill='rgba(28%2c 83%2c 142%2c 0.4)' class='triangle-float2'%3e%3c/path%3e%3cpath d='M317.796%2c1171.637C390.141%2c1171.171%2c437.071%2c1101.568%2c468.544%2c1036.426C495.435%2c980.768%2c492.947%2c919.386%2c466.711%2c863.416C434.812%2c795.366%2c392.87%2c718.332%2c317.796%2c714.834C239.23%2c711.173%2c176.564%2c777.317%2c142.736%2c848.321C113.353%2c909.994%2c131.118%2c978.317%2c163.645%2c1038.391C198.305%2c1102.405%2c245.003%2c1172.106%2c317.796%2c1171.637' fill='rgba(28%2c 83%2c 142%2c 0.4)' class='triangle-float2'%3e%3c/path%3e%3cpath d='M698.3594579619887 406.01907575826664L850.0307067180858 691.2712073259852 1135.2828382858042 539.5999585698883 983.6115895297073 254.34782700216962z' fill='rgba(28%2c 83%2c 142%2c 0.4)' class='triangle-float2'%3e%3c/path%3e%3cpath d='M1575.861%2c1134.463C1659.692%2c1131.402%2c1744.496%2c1107.528%2c1789.3%2c1036.608C1837.052%2c961.022%2c1839.056%2c864.645%2c1795.727%2c786.44C1751.049%2c705.802%2c1668.049%2c651.5%2c1575.861%2c651.374C1483.467%2c651.248%2c1402.653%2c706.709%2c1354.952%2c785.837C1305.472%2c867.917%2c1282.3%2c972.294%2c1333.599%2c1053.25C1382.46%2c1130.359%2c1484.636%2c1137.794%2c1575.861%2c1134.463' fill='rgba(28%2c 83%2c 142%2c 0.4)' class='triangle-float1'%3e%3c/path%3e%3cpath d='M1141.91 213.24 a335.71 335.71 0 1 0 671.42 0 a335.71 335.71 0 1 0 -671.42 0z' fill='rgba(28%2c 83%2c 142%2c 0.4)' class='triangle-float2'%3e%3c/path%3e%3cpath d='M108.03667176441131 522.6912701760009L213.80940354847797 798.238657089463 489.35679046194014 692.4659253053965 383.5840586778735 416.91853839193425z' fill='rgba(28%2c 83%2c 142%2c 0.4)' class='triangle-float1'%3e%3c/path%3e%3c/g%3e%3cdefs%3e%3cmask id='SvgjsMask1241'%3e%3crect width='1920' height='1080' fill='white'%3e%3c/rect%3e%3c/mask%3e%3clinearGradient x1='10.94%25' y1='119.44%25' x2='89.06%25' y2='-19.44%25' gradientUnits='userSpaceOnUse' id='SvgjsLinearGradient1242'%3e%3cstop stop-color='rgba(255%2c 0%2c 254%2c 1)' offset='0'%3e%3c/stop%3e%3cstop stop-color='rgba(0%2c 2%2c 255%2c 1)' offset='1'%3e%3c/stop%3e%3c/linearGradient%3e%3cstyle%3e %40keyframes float1 %7b 0%25%7btransform: translate(0%2c 0)%7d 50%25%7btransform: translate(-10px%2c 0)%7d 100%25%7btransform: translate(0%2c 0)%7d %7d .triangle-float1 %7b animation: float1 5s infinite%3b %7d %40keyframes float2 %7b 0%25%7btransform: translate(0%2c 0)%7d 50%25%7btransform: translate(-5px%2c -5px)%7d 100%25%7btransform: translate(0%2c 0)%7d %7d .triangle-float2 %7b animation: float2 4s infinite%3b %7d %40keyframes float3 %7b 0%25%7btransform: translate(0%2c 0)%7d 50%25%7btransform: translate(0%2c -10px)%7d 100%25%7btransform: translate(0%2c 0)%7d %7d .triangle-float3 %7b animation: float3 6s infinite%3b %7d %3c/style%3e%3c/defs%3e%3c/svg%3e"); */
+

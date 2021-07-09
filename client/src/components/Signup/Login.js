@@ -30,27 +30,32 @@ const Login = () => {
 
     return(
         <div className="signup-container">
-            <Card>
-                <Card.Body>
-                    <h2 className="text-center mb-4">Login</h2>
-                    {error && <Alert variant="danger">{error}</Alert>}
-                    <Form onSubmit={handleSubmit}>
-                        <Form.Group id="email">
-                            <Form.Label>Email</Form.Label>
-                            <Form.Control type="email" ref={emailRef} required />
-                        </Form.Group>
-                        <Form.Group id="password">
-                            <Form.Label>Password</Form.Label>
-                            <Form.Control type="password" ref={passwordRef} required />
-                        </Form.Group>
-                        <Button disabled={loading} className="w-100" type="submit">Login</Button>
-                    </Form>
-                    <div className="w-100 text-center mt-3">
-                        <Link to="/reset">Forgot Password?</Link>
-                    </div>
-                </Card.Body>
-            </Card>
-            <div className="w-100 text-center mt-2">Don't have an account? <Link to="/signup">Sign up</Link></div>
+            <div  className="signup-card-container">
+                <Card className="card-container dark">
+                    <Card.Body className="card-body">
+                        <h2>Login</h2>
+                        <div className="form-tab">
+                            <a className="signup-tab">Login</a>
+                            <a className="login-tab" href="/signup">Signup</a>
+                        </div>
+                        {error && <Alert variant="danger" className="login-error">{error}</Alert>}
+                        <Form onSubmit={handleSubmit} className="card-form">
+                            <Form.Group id="email" className="card-form-group">
+                                <Form.Control type="email" ref={emailRef} required placeholder="Email address" className="card-inputs"/>
+                            </Form.Group>
+                            <Form.Group id="password" className="card-form-group">
+                                <Form.Control type="password" ref={passwordRef} required placeholder="Password" className="card-inputs"/>
+                            </Form.Group>
+                            <span className="note">Password must be at least 6 letters.</span>
+                            <div className="reset-password">
+                                <Link to="/reset" className="card-link"><p>Forgot password?</p></Link>
+                            </div>
+                            <Button disabled={loading} className="card-form-group" type="submit" className="submit-button" id="login">Login</Button>
+                        </Form>
+                    </Card.Body><br />
+                    <p className="account-login">Dont have an account? <Link to="/signup" className="card-link">Sign up.</Link></p>
+                </Card>
+            </div>
         </div>
     )
 }

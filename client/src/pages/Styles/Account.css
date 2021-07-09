@@ -1,4 +1,212 @@
 .account-container{
     background-color: #1d1b31;
-    height: 100vh;
+    min-height: 100vh;
+    padding-bottom: 1rem;
+}
+.account-wrapper{
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    width: 100%;
+}
+.account-info{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    width: 100%;
+}
+.account-bar{
+    background-color: #131722;
+    height: 4rem;
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    justify-content: space-between;
+}
+.account-bar-info{
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+}
+.account-avatar{
+    margin-left: 2.5rem;
+    border-radius: 20px;
+    width: 40px;
+    height: 40px;
+    overflow: hidden;
+}
+.account-avatar img{
+    width: 40px;
+    height: 40px;
+}
+.account-text{
+    padding-left: 1rem;
+    display: flex;
+}
+.account-text .account-email-address{
+    padding-left: 1rem;
+}
+.account-text .account-username{
+    background: -webkit-linear-gradient(right, #00ffd5, #00aeff);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    padding-left: 1rem;
+}
+.account-id{
+    display: flex;
+    padding-left: 0.8rem;
+    color: #ccc;
+}
+.account-text .account-id .account-id-text{
+    padding-left: 0.4rem;
+    color: #fff;
+}
+.account-bar-reset{
+    padding-right: 2rem;
+}
+.account-bar-reset button{
+    height: 2rem;
+    border: none;
+    border-radius: 8px;
+    width: 128px;
+    margin: 0 0.4rem;
+}
+.account-bar-reset .delete-account{
+    background-color: #00aeff99;
+    transition: all 0.3s;
+}
+.account-bar-reset .reset-account{
+    background-color: #00aeff99;
+    transition: all 0.3s;
+}
+.account-bar-reset .delete-account:hover{
+    background-color: #00aeff;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+.account-bar-reset .reset-account:hover{
+    background-color: #00aeff;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+.holdings-update-box{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.holdings-box{
+    width: 80%;
+    height: 400px;
+    margin: 1rem 0.6rem;
+    background-color: #131722;
+    border-radius: 6px;
+    padding: 1rem;
+}
+.update-box{
+    margin: 1rem 0.6rem;
+    width: 20%;
+    height: 400px;
+    background-color: #131722;
+    border-radius: 6px;
+    padding: 1rem;
+}
+.open-positions{
+    padding: 1rem;
+    margin-left: 0.6rem;
+    margin-right: 0.6rem;
+    border-radius: 6px;
+    background-color: #131722;
+    min-height: 400px;
+}
+.doughnut-data{
+    width: 312px;
+    margin-right: 3rem;
+    display: flex;
+    align-items: row;
+}
+.doughnut{
+    display: flex;
+    justify-content: row;
+    width: 100%;
+    margin-right: 6rem;
+}
+
+.holdings-wrapper{
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+.holdings-info{
+    padding: 4rem 2rem;
+    width: 100%;
+    color: #bbb;
+}
+.holdings-amount{
+    font-size: 2rem;
+    padding-top: 0.2rem;
+    padding-left: 0.2rem;
+    color: #fff;
+}
+.holdings-amount.available{
+    font-size: 1.6rem;
+}
+.available-title{
+    padding-top: 3rem;
+}
+.update-box{
+    display: flex;
+    flex-direction: column;
+}
+.update-box input{
+    height: 3rem;
+    border-radius: 8px;
+    background-color: #1d1b31;
+    border: white 0.2px solid;
+    padding: 0.5rem;
+}
+.update-box span{
+    color: #bbb;
+    padding-top: 1rem;
+}
+.holdings-small-info{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 100%;
+}
+.holding{
+    width: 128px;
+    border-radius: 10px;
+    height: 1.8rem;
+    margin: 0.2rem 0;
+    padding: 0.4rem;
+    display: flex;
+    align-items: center;
+    width: 100%;
+}
+.account-update-button{
+    background-color: #00aeff;
+    width: 200px;
+    height: 2rem;
+    border-radius: 8px;
+    border: none;
+    margin-top: 2rem;
+}
+.update-button-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#orange{
+    color: #ffcc00;
+}
+#blue{
+    color:#00aeff;
+}
+#yellow{
+    color: #ffee00;
+}
+#green{
+    color: #11ff00;
 }

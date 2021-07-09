@@ -34,28 +34,32 @@ const Signup = () => {
 
     return(
         <div className="signup-container">
-            <Card>
-                <Card.Body>
-                    <h2 className="text-center mb-4">Sign up</h2>
-                    {error && <Alert variant="danger">{error}</Alert>}
-                    <Form onSubmit={handleSubmit}>
-                        <Form.Group id="email">
-                            <Form.Label>Email</Form.Label>
-                            <Form.Control type="email" ref={emailRef} required />
-                        </Form.Group>
-                        <Form.Group id="password">
-                            <Form.Label>Password</Form.Label>
-                            <Form.Control type="password" ref={passwordRef} required />
-                        </Form.Group>
-                        <Form.Group id="password-confirm">
-                            <Form.Label>Password Confirmation</Form.Label>
-                            <Form.Control type="password" ref={passwordConfirmRef} required />
-                        </Form.Group>
-                        <Button disabled={loading} className="w-100" type="submit">Sign up</Button>
-                    </Form>
-                </Card.Body>
-            </Card>
-            <div className="w-100 text-center mt-2">Already have an account? <Link to="/login">Log in.</Link></div>
+            <div  className="signup-card-container">
+                <Card className="card-container dark">
+                    <Card.Body className="card-body">
+                        <h2>Sign up</h2>
+                        <div className="form-tab">
+                            <a className="login-tab" href="/login">Login</a>
+                            <span className="signup-tab">Signup</span>
+                        </div>
+                        {error && <Alert variant="danger" className="signup-error">{error}</Alert>}
+                        <Form onSubmit={handleSubmit} className="card-form" autoComplete="none">
+                            <Form.Group id="email" className="card-form-group">
+                                <Form.Control type="email" ref={emailRef} required placeholder="Email address" className="card-inputs" autoComplete="none"/>
+                            </Form.Group>
+                            <Form.Group id="password" className="card-form-group">
+                                <Form.Control type="password" ref={passwordRef} required placeholder="Password" className="card-inputs" autoComplete="none"/>
+                            </Form.Group>
+                            <Form.Group id="password-confirm" className="card-form-group">
+                                <Form.Control type="password" ref={passwordConfirmRef} required placeholder="Confirm password" className="card-inputs"/>
+                            </Form.Group>
+                            <span className="note">Password must be at least 6 letters.</span>
+                            <Button disabled={loading} type="submit" className="submit-button signup" id="signup">Sign up</Button>
+                        </Form>
+                    </Card.Body><br />
+                    <p className="account-signup">Already have an account? <Link to="/login" className="card-link">Log in.</Link></p>
+                </Card>
+            </div>
         </div>
     )
 }
