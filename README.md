@@ -5,5 +5,5 @@ A sleek designed stock market paper trading website used to help new traders get
 
 ## Useful links
 
-Market data: https://binance-docs.github.io/apidocs
-News: https://gnews.io/docs/v4
+- Market data: https://binance-docs.github.io/apidocs
+- News: https://gnews.io/docs/v4
