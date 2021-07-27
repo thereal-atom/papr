@@ -11,4 +11,5 @@ A sleek designed stock market paper trading website used to help new traders get
 - Terms of Service Generator: https://termly.io/products/terms-and-conditions-generator/?ftseo
 - SVG Backgrounds: https://bgjar.com/
 - Web hosting: https://netlify.com
-- API Hosting: https://heroku.com
+- API hosting: https://heroku.com
+- Domain hosting: https://godaddy.com 
