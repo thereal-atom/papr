@@ -7,3 +7,8 @@ A sleek designed stock market paper trading website used to help new traders get
 
 - Market data: https://binance-docs.github.io/apidocs
 - News: https://gnews.io/docs/v4
+- Privacy Policy generator: https://www.termsfeed.com/privacy-policy-generator/
+- Terms of Service Generator: https://termly.io/products/terms-and-conditions-generator/?ftseo
+- SVG Backgrounds: https://bgjar.com/
+- Web hosting: https://netlify.com
+- API Hosting: https://heroku.com
